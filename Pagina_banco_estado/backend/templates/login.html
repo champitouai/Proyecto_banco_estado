@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <style>
+        .flashes {
+            background-color: #F79818;
+            padding: 4px;
+            border: 1px solid black;
+            border-radius: 4px;
+            position: relative;
+            color: white;
+            margin-bottom: 10px;
+            text-align: left;
+            width: auto;  /* Ajusta el ancho según tus necesidades */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <!-- Aquí es donde se mostrarán los mensajes flash -->
+        <h2>Login</h2>
+        <form method="POST">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="flashes">
+                {% for message in messages %}
+                <div class="flash">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+            <div class="user-box">
+                <input type="email" id="correo" name="correo" required>
+                <label>Correo</label>
+            </div>
+            <div class="user-box">
+                <input type="password" id="contrasena" name="contrasena" required>
+                <label>Contraseña</label>
+            </div>
+            <a href="javascript:void(0);" onclick="this.closest('form').submit();">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Iniciar Sesión
+            </a>
+        </form>
+    </div>
+</body>
+</html>

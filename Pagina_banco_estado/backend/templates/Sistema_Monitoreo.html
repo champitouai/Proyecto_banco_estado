@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav">
+          <!-- ***** Logo Start ***** -->
+          <a href="{{ url_for('index') }}" class="logo">
+            <img src="{{ url_for('static', filename='images/logo_banco.png') }}" alt="">
+          </a>
+          <!-- ***** Logo End ***** -->
+          <!-- ***** Menu Start ***** -->
+          <ul class="nav">
+            <li><a href="{{ url_for('sistema_de_monitoreo')}}">Sistema de Monitoreo</a></li>
+            <li><a href="{{ url_for('sistema_de_alertas') }}">Sistema de Alertas</a></li>
+            <li><a href="{{ url_for('clear_session') }}">Cerrar Sesión</a></li>
+          </ul>
+          <a class='menu-trigger'>
+            <span>Menu</span>
+          </a>
+          <!-- ***** Menu End ***** -->
+        </nav>
+      </div>
+      <iframe title="Seguimiento_compras personal" width="1280" height="1060" src="https://app.powerbi.com/reportEmbed?reportId=b5866df3-6f61-4db7-b025-1a8a91f90e00&autoAuth=true&ctid=189d9de0-0fef-4050-9094-e7cf9e6b3bb5" frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+  </div>
+</header>
+<!-- ***** Header Area End ***** -->
+
+<div style="margin-top: 90%;">
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p>Copyright © 2023 Banco Estado., Ltd. All Rights Reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
